@@ -3,7 +3,7 @@
 """
 one.py
 
-Digest only the first tatum in a beat 
+Digests only the first tatum in a beat 
 
 By Reid Yanik with code from Ben Lacker, 2009-02-18.
 """
@@ -19,10 +19,10 @@ Example:
 
 def main(input_filename, output_filename):
     audiofile = audio.LocalAudioFile(input_filename)
-    bars = audiofile.analysis.bars
+    beats = audiofile.analysis.beats
     collect = audio.AudioQuantumList()
-    for bar in bars:
-        collect.append(bar.children()[0].children()[0])
+    for beat in beats:
+        collect.append(beat.children()[0])
     out = audio.getpieces(audiofile, collect)
     out.encode(output_filename)
 

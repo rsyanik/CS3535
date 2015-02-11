@@ -5,16 +5,16 @@ one.py
 
 Digests only the first tatum in a beat 
 
-By Reid Yanik with code from Ben Lacker, 2009-02-18.
+By Reid Yanik based on one.py from Ben Lacker, 2009-02-18.
 """
 import echonest.remix.audio as audio
 
 usage = """
 Usage: 
-    python one.py <input_filename> <output_filename>
+    python one_tatum.py <input_filename> <output_filename>
 
 Example:
-    python one.py EverythingIsOnTheOne.mp3 EverythingIsReallyOnTheOne.mp3
+    python one_tatum.py EverythingIsOnTheOne.mp3 EverythingIsReallyOnTheOne.mp3
 """
 
 def main(input_filename, output_filename):

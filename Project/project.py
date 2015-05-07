@@ -1,8 +1,18 @@
 #!/usr/bin/env python
 
+__author__ = 'Reid Yanik'
+
+"""
+    With code from Dr. Parry's Infinite Playlist
+    and Luke Stack's Beat distance functions.
+"""
+
+usage = """
+            python Project/project.py <Directory> <output_filename>
+        """
+
 import echonest.remix.audio as audio
 import os
-import pickle
 import sys
 import shutil
 import hashlib

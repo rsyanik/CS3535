@@ -32,19 +32,6 @@ def _is_md5(x_):
 def get_md5(song_file_):
     return hashlib.md5(file(song_file_, 'rb').read()).hexdigest()
 
-def all_used(used):
-    for md5_ in used:
-        if used[md5_] == False:
-            return False
-    return True
-
-def clear_md5(used):
-    for md5_ in used:
-        used[md5_] = False
-
-def check_keys(local_audio,beats):
-    return local_audio.keys() == beats.keys()
-
 def get_all_songs(directory_):
     all_songs_ = []
     for f_ in os.listdir(directory_):
@@ -157,14 +144,9 @@ def get_closest_beat(beats, target_beat,MD5):
     return(min_md5_, min_beat_index)
 
 def my_get_pieces(local_audio, beats):
-    print "keys are the same: ", check_keys(local_audio,beats)
     MD5 = random.choice(list(local_audio.keys()))
     laf_ = local_audio[MD5]
     md5_list = {}
-    used = {}
-
-    for md5_ in local_audio:
-        used[md5_] = False
 
     dur = 0
     channels = laf_.data.shape[1]
